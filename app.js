@@ -11,9 +11,9 @@ db.mongoose.connect(db.url,{
     useNewUrlParser:true,
     useUnifiedTopology:true,
 }).then(()=>{
-    console.log("berhasil conect");
+    console.log("berhasil");
 }).catch((err)=>{
-    console.log("error",err);
+    console.log("erorr coy",err);
     process.exit();
 })
 
@@ -22,6 +22,8 @@ app.get('/',(req,res)=>{
         message:"hallo guys"
     })
 })
+
+require('./app/routes/post.routes')(app)
 
 const PORT = 8000;
 
